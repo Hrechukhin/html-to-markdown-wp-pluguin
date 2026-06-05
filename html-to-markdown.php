@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       HTML → Markdown Site Export
  * Plugin URI:        https://langate.local/
- * Description:        Обходить карту сайту (WP sitemap) і зберігає кожну зрендерену сторінку в Markdown, включно з посиланнями на зображення та SEO-даними з <head>.
+ * Description:        Crawls the WP sitemap and saves every rendered page as a Markdown file, including image links and SEO data from &lt;head&gt;.
  * Version:           1.0.0
  * Requires at least: 5.5
  * Requires PHP:      7.4
@@ -24,9 +24,20 @@ define( 'H2MD_URL', plugin_dir_url( __FILE__ ) );
 define( 'H2MD_OPTION', 'h2md_settings' );
 define( 'H2MD_QUEUE_TRANSIENT', 'h2md_export_queue' );
 
-// Composer autoloader (league/html-to-markdown).
+// Composer autoloader (league/html-to-markdown, plugin-update-checker).
 if ( file_exists( H2MD_DIR . 'vendor/autoload.php' ) ) {
 	require_once H2MD_DIR . 'vendor/autoload.php';
+}
+
+// Self-update from the GitHub repository (branch: main).
+if ( class_exists( \YahnisElsts\PluginUpdateChecker\v5\PucFactory::class ) ) {
+	$h2md_update_checker = \YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker(
+		'https://github.com/Hrechukhin/html-to-markdown-wp-pluguin/',
+		H2MD_FILE,
+		'html-to-markdown'
+	);
+	// Pull updates from the main branch (reads the Version: header on each check).
+	$h2md_update_checker->setBranch( 'main' );
 }
 
 // Plugin classes.
@@ -73,3 +84,14 @@ function h2md_get_settings() {
 register_activation_hook( __FILE__, array( 'H2MD_Plugin', 'activate' ) );
 
 add_action( 'plugins_loaded', array( 'H2MD_Plugin', 'instance' ) );
+
+add_action(
+	'init',
+	function () {
+		load_plugin_textdomain(
+			'html-to-markdown',
+			false,
+			dirname( plugin_basename( H2MD_FILE ) ) . '/languages'
+		);
+	}
+);

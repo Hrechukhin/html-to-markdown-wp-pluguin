@@ -65,7 +65,7 @@ class H2MD_Sitemap_Crawler {
 			}
 		}
 
-		return new WP_Error( 'h2md_no_sitemap', __( 'Не вдалося знайти sitemap. Вкажіть URL вручну в налаштуваннях.', 'html-to-markdown' ) );
+		return new WP_Error( 'h2md_no_sitemap', __( 'Could not find sitemap. Please enter the URL manually in settings.', 'html-to-markdown' ) );
 	}
 
 	/**
@@ -105,7 +105,7 @@ class H2MD_Sitemap_Crawler {
 		$urls = array_values( array_unique( array_filter( $urls ) ) );
 
 		if ( empty( $urls ) ) {
-			return new WP_Error( 'h2md_empty_sitemap', __( 'Sitemap знайдено, але він не містить URL.', 'html-to-markdown' ) );
+			return new WP_Error( 'h2md_empty_sitemap', __( 'Sitemap found but it contains no URLs.', 'html-to-markdown' ) );
 		}
 
 		return array(

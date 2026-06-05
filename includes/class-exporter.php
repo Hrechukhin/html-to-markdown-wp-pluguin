@@ -222,17 +222,17 @@ class H2MD_Exporter {
 
 		// Guard: never write outside the export dir.
 		if ( 0 !== strpos( $path, $base ) ) {
-			return new WP_Error( 'h2md_path_escape', __( 'Спроба запису поза папкою експорту.', 'html-to-markdown' ) );
+			return new WP_Error( 'h2md_path_escape', __( 'Attempted to write outside the export directory.', 'html-to-markdown' ) );
 		}
 
 		$dir = dirname( $path );
 		if ( ! wp_mkdir_p( $dir ) ) {
-			return new WP_Error( 'h2md_mkdir', __( 'Не вдалося створити папку експорту.', 'html-to-markdown' ) );
+			return new WP_Error( 'h2md_mkdir', __( 'Could not create the export directory.', 'html-to-markdown' ) );
 		}
 
 		$result = file_put_contents( $path, $content ); // phpcs:ignore WordPress.WP.AlternativeFunctions
 		if ( false === $result ) {
-			return new WP_Error( 'h2md_write', __( 'Не вдалося записати файл.', 'html-to-markdown' ) );
+			return new WP_Error( 'h2md_write', __( 'Could not write file.', 'html-to-markdown' ) );
 		}
 
 		return true;
@@ -246,7 +246,7 @@ class H2MD_Exporter {
 	public function prepare_dir() {
 		$dir = $this->export_dir();
 		if ( ! wp_mkdir_p( $dir ) ) {
-			return new WP_Error( 'h2md_mkdir', __( 'Не вдалося створити папку експорту.', 'html-to-markdown' ) );
+			return new WP_Error( 'h2md_mkdir', __( 'Could not create the export directory.', 'html-to-markdown' ) );
 		}
 
 		$index = trailingslashit( $dir ) . 'index.php';
@@ -264,8 +264,9 @@ class H2MD_Exporter {
 	 * @return true|WP_Error
 	 */
 	public function write_index( array $pages ) {
-		$lines   = array( '# Карта сайту', '' );
-		$lines[] = '> Згенеровано ' . current_time( 'mysql' ) . ' — ' . count( $pages ) . ' сторінок.';
+		/* translators: %1$s: date/time, %2$d: number of pages */
+		$lines   = array( '# ' . __( 'Site Map', 'html-to-markdown' ), '' );
+		$lines[] = '> ' . sprintf( __( 'Generated %1$s — %2$d pages.', 'html-to-markdown' ), current_time( 'mysql' ), count( $pages ) );
 		$lines[] = '';
 
 		usort(

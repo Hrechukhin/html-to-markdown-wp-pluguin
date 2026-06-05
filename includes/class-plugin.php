@@ -59,7 +59,7 @@ class H2MD_Plugin {
 	 */
 	private function verify_request() {
 		if ( ! current_user_can( 'manage_options' ) ) {
-			wp_send_json_error( array( 'message' => __( 'Недостатньо прав.', 'html-to-markdown' ) ), 403 );
+			wp_send_json_error( array( 'message' => __( 'Insufficient permissions.', 'html-to-markdown' ) ), 403 );
 		}
 		check_ajax_referer( 'h2md_ajax', 'nonce' );
 	}
@@ -110,7 +110,7 @@ class H2MD_Plugin {
 
 		$queue = get_transient( H2MD_QUEUE_TRANSIENT );
 		if ( ! is_array( $queue ) ) {
-			wp_send_json_error( array( 'message' => __( 'Чергу не знайдено. Спочатку зберіть карту сайту.', 'html-to-markdown' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Queue not found. Please build the sitemap first.', 'html-to-markdown' ) ) );
 		}
 
 		$slice    = array_slice( $queue, $offset, $size );

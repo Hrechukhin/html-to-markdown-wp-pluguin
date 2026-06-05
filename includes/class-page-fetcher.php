@@ -89,7 +89,7 @@ class H2MD_Page_Fetcher {
 			return new WP_Error(
 				'h2md_http_error',
 				/* translators: %d: HTTP status code */
-				sprintf( __( 'HTTP %d під час завантаження сторінки.', 'html-to-markdown' ), $code )
+				sprintf( __( 'HTTP %d while fetching the page.', 'html-to-markdown' ), $code )
 			);
 		}
 
@@ -97,14 +97,14 @@ class H2MD_Page_Fetcher {
 		if ( $ctype && false === stripos( $ctype, 'html' ) ) {
 			return new WP_Error(
 				'h2md_not_html',
-				/* translators: %s: content type */
-				sprintf( __( 'Сторінка не є HTML (%s).', 'html-to-markdown' ), $ctype )
+				/* translators: %s: content-type header value */
+				sprintf( __( 'Page is not HTML (%s).', 'html-to-markdown' ), $ctype )
 			);
 		}
 
 		$body = wp_remote_retrieve_body( $response );
 		if ( '' === trim( $body ) ) {
-			return new WP_Error( 'h2md_empty_body', __( 'Порожня відповідь сторінки.', 'html-to-markdown' ) );
+			return new WP_Error( 'h2md_empty_body', __( 'Empty page response.', 'html-to-markdown' ) );
 		}
 
 		return $body;

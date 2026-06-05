@@ -1,0 +1,179 @@
+# HTML → Markdown Site Export — translation template.
+# Copyright (C) 2024 Langate
+# This file is distributed under the GPL-2.0-or-later license.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: HTML to Markdown Site Export 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-05 12:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Plugin Name of the plugin.
+msgid "HTML → Markdown Site Export"
+msgstr ""
+
+#. Description of the plugin.
+msgid "Crawls the WP sitemap and saves every rendered page as a Markdown file, including image links and SEO data from <head>."
+msgstr ""
+
+#: includes/class-sitemap-crawler.php
+msgid "Could not find sitemap. Please enter the URL manually in settings."
+msgstr ""
+
+#: includes/class-sitemap-crawler.php
+msgid "Sitemap found but it contains no URLs."
+msgstr ""
+
+#: includes/class-page-fetcher.php
+#, php-format
+msgid "HTTP %d while fetching the page."
+msgstr ""
+
+#: includes/class-page-fetcher.php
+#, php-format
+msgid "Page is not HTML (%s)."
+msgstr ""
+
+#: includes/class-page-fetcher.php
+msgid "Empty page response."
+msgstr ""
+
+#: includes/class-exporter.php
+msgid "Attempted to write outside the export directory."
+msgstr ""
+
+#: includes/class-exporter.php
+msgid "Could not create the export directory."
+msgstr ""
+
+#: includes/class-exporter.php
+msgid "Could not write file."
+msgstr ""
+
+#: includes/class-exporter.php
+msgid "Site Map"
+msgstr ""
+
+#: includes/class-exporter.php
+#, php-format
+msgid "Generated %1$s — %2$d pages."
+msgstr ""
+
+#: includes/class-plugin.php
+msgid "Insufficient permissions."
+msgstr ""
+
+#: includes/class-plugin.php
+msgid "Queue not found. Please build the sitemap first."
+msgstr ""
+
+#: includes/class-admin-page.php
+msgid "HTML → Markdown"
+msgstr ""
+
+#: includes/class-admin-page.php
+msgid "Building sitemap…"
+msgstr ""
+
+#: includes/class-admin-page.php
+msgid "Pages found:"
+msgstr ""
+
+#: includes/class-admin-page.php
+msgid "Exporting…"
+msgstr ""
+
+#: includes/class-admin-page.php
+msgid "Done! Pages exported:"
+msgstr ""
+
+#: includes/class-admin-page.php
+msgid "Error:"
+msgstr ""
+
+#: includes/class-admin-page.php
+msgid "Settings"
+msgstr ""
+
+#: includes/class-admin-page.php
+msgid "Crawls the sitemap, fetches the rendered HTML of every page, and saves it as Markdown with SEO metadata and image links."
+msgstr ""
+
+#: includes/class-admin-page.php
+msgid "Sitemap URL"
+msgstr ""
+
+#: includes/class-admin-page.php
+msgid "Leave blank to auto-detect (wp-sitemap.xml / sitemap_index.xml)."
+msgstr ""
+
+#: includes/class-admin-page.php
+msgid "Export folder"
+msgstr ""
+
+#: includes/class-admin-page.php
+msgid "Must be inside wp-content/uploads."
+msgstr ""
+
+#: includes/class-admin-page.php
+msgid "Batch size"
+msgstr ""
+
+#: includes/class-admin-page.php
+msgid "Pages per AJAX request (1–50)."
+msgstr ""
+
+#: includes/class-admin-page.php
+msgid "Content selector"
+msgstr ""
+
+#: includes/class-admin-page.php
+msgid "Default: body. Can be narrowed to: main, #content, .entry-content."
+msgstr ""
+
+#: includes/class-admin-page.php
+msgid "Base URL override"
+msgstr ""
+
+#: includes/class-admin-page.php
+msgid "Leave blank if loopback works. Useful for non-standard local hostnames."
+msgstr ""
+
+#: includes/class-admin-page.php
+msgid "Basic Auth (optional)"
+msgstr ""
+
+#: includes/class-admin-page.php
+msgid "username"
+msgstr ""
+
+#: includes/class-admin-page.php
+msgid "password"
+msgstr ""
+
+#: includes/class-admin-page.php
+msgid "For password-protected staging environments."
+msgstr ""
+
+#: includes/class-admin-page.php
+msgid "Save Settings"
+msgstr ""
+
+#: includes/class-admin-page.php
+msgid "Export"
+msgstr ""
+
+#: includes/class-admin-page.php
+msgid "1. Build sitemap"
+msgstr ""
+
+#: includes/class-admin-page.php
+msgid "2. Export"
+msgstr ""

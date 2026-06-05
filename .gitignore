@@ -1,5 +1,6 @@
 # Composer
-/vendor/
+# vendor/ is committed on purpose: self-update from the main branch ships
+# league/html-to-markdown + plugin-update-checker inside the plugin zip.
 composer.phar
 
 # OS
