@@ -1,0 +1,47 @@
+.h2md-status {
+	margin: 12px 0;
+	font-weight: 600;
+}
+.h2md-status.is-error {
+	color: #b32d2e;
+}
+.h2md-progress-wrap {
+	max-width: 720px;
+	margin: 12px 0;
+}
+.h2md-progress-bar {
+	height: 18px;
+	background: #e2e4e7;
+	border-radius: 9px;
+	overflow: hidden;
+}
+.h2md-progress-bar span {
+	display: block;
+	height: 100%;
+	width: 0;
+	background: #2271b1;
+	transition: width 0.2s ease;
+}
+#h2md-progress-text {
+	margin-top: 6px;
+	font-variant-numeric: tabular-nums;
+}
+.h2md-log {
+	max-width: 720px;
+	max-height: 320px;
+	overflow-y: auto;
+	margin-top: 12px;
+	padding: 8px 12px;
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+	font-family: Menlo, Consolas, monospace;
+	font-size: 12px;
+	line-height: 1.6;
+}
+.h2md-log-ok {
+	color: #1a7f37;
+}
+.h2md-log-err {
+	color: #b32d2e;
+}

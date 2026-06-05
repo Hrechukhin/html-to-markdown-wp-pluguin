@@ -1,0 +1,12 @@
+{
+    "name": "langate/html-to-markdown",
+    "description": "Export the WordPress sitemap and every rendered page to Markdown with image links and SEO metadata.",
+    "type": "wordpress-plugin",
+    "require": {
+        "php": ">=7.4",
+        "league/html-to-markdown": "^5.1"
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}

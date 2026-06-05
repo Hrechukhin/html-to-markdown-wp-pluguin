@@ -1,0 +1,19 @@
+# Composer
+/vendor/
+composer.phar
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+
+# Export output (generated at runtime — not source)
+/exports/
